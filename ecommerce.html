@@ -4,6 +4,16 @@
         <title>
             Ecommerce website
         </title>
+        <style>
+        #form-data{
+            margin: auto;
+            width: fit-content;
+        }
+        body {
+           background-color: #a34545; 
+       }
+
+        </style>
     </head>
     <body>
         <form id="form-data">
@@ -17,10 +27,11 @@
                 <option value="Food">Food</option>
                 <option value="Skin Care">Skin Care</option>
             </select>
+            
             <input type="submit" class="submit" id="submit" name="submit" class="form" value="Add Product">
             
             <div id="display">
-                <h1>Product</h1>
+                <h1 style="margin: auto;width: fit-content;">Product</h1>
                 <div id="Electronics">
                     <h2>Electronic Items</h2>
                     <ul></ul>
@@ -33,7 +44,7 @@
                     <h2>Skin Care Items</h2>
                     <ul></ul>
                 </div>
-            </div>
+            </div>  
         </form>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="script.js"></script>
