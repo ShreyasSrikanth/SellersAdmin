@@ -17,6 +17,8 @@ async function addToDb(e) {
             completed: false
         });
 
+        alert("data succefully stored");
+
         document.getElementById('name').value = "";
         document.getElementById('phone').value = "";
         document.getElementById('email').value = "";
@@ -45,7 +47,26 @@ function displayData(users) {
 
     users.forEach(user => {
         const listItem = document.createElement('li');
-        listItem.textContent = `Name: ${user.name}, Phone: ${user.phone}, Email: ${user.email}`;
+
+        const userText = document.createElement('span');
+        userText.textContent = `Name: ${user.name}, Phone: ${user.phone}, Email: ${user.email}`;
+
+        const editButton = document.createElement('button');
+        editButton.textContent = 'Edit';
+        editButton.addEventListener('click', () => {
+            console.log(`Editing user: ${user.name}`);
+        });
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', () => {
+            console.log(`Deleting user: ${user.name}`);
+        });
+
+        listItem.appendChild(userText);
+        listItem.appendChild(editButton);
+        listItem.appendChild(deleteButton);
+
         userList.appendChild(listItem);
     });
 }
